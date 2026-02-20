@@ -265,7 +265,8 @@ h3 {
 
 .brand-title {
   text-align: center;
-  padding: var(--section-gap) 0 calc(var(--section-gap) * 0.5);
+  padding: var(--section-gap) 0 0;
+  margin-bottom: calc(var(--section-gap) * -0.5);
 }
 
 .brand-title h1 {
@@ -288,6 +289,38 @@ h3 {
 
 .pillar {
   text-align: center;
+}
+
+.pillar-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 16px;
+  object-fit: cover;
+  margin: 0 auto 1.5rem;
+}
+
+.pillar-img--earth {
+  object-position: center 40%;
+}
+
+.pillar-img--body {
+  object-position: center 30%;
+}
+
+.pillar-img--mind-wrap {
+  width: 200px;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 0 auto 1.5rem;
+}
+
+.pillar-img--mind-wrap .pillar-img {
+  width: 100%;
+  height: 150%;
+  border-radius: 0;
+  margin: 0;
+  object-position: center top;
 }
 
 .pillar h3 {
@@ -320,6 +353,9 @@ h3 {
 .testimonial-section {
   text-align: center;
   padding: calc(var(--section-gap) * 1.1) 0;
+  background:
+    linear-gradient(rgba(4, 31, 44, 0.85), rgba(4, 31, 44, 0.85)),
+    url("images/hero-background.jpg") center / cover no-repeat;
 }
 
 .testimonial {
@@ -328,10 +364,9 @@ h3 {
 }
 
 .testimonial p {
-  font-family: var(--font-accent);
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  line-height: 1.8;
-  font-style: italic;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  line-height: 1.85;
 }
 
 .testimonial cite {
@@ -413,6 +448,57 @@ h3 {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1.5rem;
+}
+
+.inclusive-col-img--safe-space {
+  object-position: center 40%;
+}
+
+.pride-banner {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pride-banner-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.pride-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 31, 44, 0.25);
+  z-index: 1;
+}
+
+.pride-banner-text {
+  position: relative;
+  z-index: 2;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-shadow: none;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+  margin-left: 15%;
 }
 
 /* ---- Connect: Contact ---- */
