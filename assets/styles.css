@@ -475,7 +475,7 @@ h3 {
   color: var(--color-accent-hover);
 }
 
-/* ---- Testimonial ---- */
+/* ---- Testimonial Carousel ---- */
 
 .testimonial-section {
   text-align: center;
@@ -483,6 +483,32 @@ h3 {
   background:
     linear-gradient(rgba(4, 31, 44, 0.85), rgba(4, 31, 44, 0.85)),
     url("images/hero-background.jpg") center / cover no-repeat;
+}
+
+.testimonial-carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.carousel-slide.active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .testimonial {
@@ -505,6 +531,69 @@ h3 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   opacity: 0.7;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 1px solid rgba(248, 243, 231, 0.25);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(248, 243, 231, 0.6);
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+  z-index: 2;
+}
+
+.carousel-arrow:hover {
+  color: var(--color-text-light);
+  border-color: rgba(248, 243, 231, 0.5);
+}
+
+.carousel-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.carousel-arrow--prev {
+  left: -60px;
+}
+
+.carousel-arrow--next {
+  right: -60px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(248, 243, 231, 0.4);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.carousel-dot:hover {
+  border-color: rgba(248, 243, 231, 0.7);
+}
+
+.carousel-dot.active {
+  background: rgba(248, 243, 231, 0.8);
+  border-color: rgba(248, 243, 231, 0.8);
 }
 
 /* ---- About: Meet Miwa (2-col) ---- */
@@ -832,6 +921,28 @@ h3 {
 
   .about-image {
     order: -1;
+  }
+
+  .carousel-arrow--prev {
+    left: -8px;
+  }
+
+  .carousel-arrow--next {
+    right: -8px;
+  }
+
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .carousel-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .testimonial-carousel {
+    padding: 0 40px;
   }
 
   .footer-social {
